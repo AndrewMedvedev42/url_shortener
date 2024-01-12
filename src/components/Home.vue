@@ -36,7 +36,8 @@ export default {
   methods: {
     submit: async function (url) {
       try {
-        const response = await axios.post(`${process.emv.VUE_APP_BACKEND_URL}/url`, {url});
+        const backendOrigin = process.emv.VUE_APP_BACKEND_URL
+        const response = await axios.post(`${backendOrigin}/url`, {url});
         this.shortUrl = response.data.shortUrl;
       } catch (error) {
         console.log(error);
